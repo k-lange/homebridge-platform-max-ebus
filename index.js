@@ -130,5 +130,5 @@ module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   _homebridge = homebridge;
-  homebridge.registerPlatform('homebridge-platform-maxcube', 'MaxCubePlatform', MaxCubePlatform);
+  homebridge.registerPlatform('homebridge-platform-max-ebus', 'MaxEbusPlatform', MaxCubePlatform);
 }
