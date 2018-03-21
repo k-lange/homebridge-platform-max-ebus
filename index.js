@@ -1,6 +1,7 @@
 var MaxCube = require('maxcube2');
 var Thermostat = require('./thermostat');
 var ContactSensor = require('./contactsensor');
+const { setHeatingTemperature } = require('./ebus');
 var Service;
 var Characteristic;
 var _homebridge;
@@ -65,6 +66,7 @@ MaxCubePlatform.prototype = {
         });
       }
     });
+    this.cube.on('device_list', devices => setHeatingTemperature(this.log, devices));
     this.startCube();
   },
   startCube: function(){
